@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CKD Health Predictor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #74ebd5, #ACB6E5);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 420px;
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.2);
+}
+h2 {
+    text-align: center;
+    color: #333;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+input {
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.2s;
+}
+input:focus {
+    border-color: #4ca2cd;
+    box-shadow: 0 0 8px rgba(76,162,205,0.3);
+}
+button {
+    margin-top: 15px;
+    background: linear-gradient(45deg, #4ca2cd, #67b26f);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+button:hover {
+    transform: scale(1.05);
+}
+.tooltip {
+    font-size: 13px;
+    color: #555;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>🩺 CKD Health Predictor</h2>
+    <form action="/predict" method="POST">
+        <input type="number" step="any" name="age" placeholder="Age (years)" required>
+        <input type="number" step="any" name="bp" placeholder="Blood Pressure (mmHg)" required>
+        <input type="number" step="any" name="sg" placeholder="Specific Gravity (1.005 - 1.025)" required>
+        <input type="number" step="any" name="al" placeholder="Albumin (0–5)" required>
+        <input type="number" step="any" name="su" placeholder="Sugar (0–5)" required>
+        <input type="number" step="any" name="bgr" placeholder="Blood Glucose Random (mg/dL)" required>
+        <input type="number" step="any" name="bu" placeholder="Blood Urea (mg/dL)" required>
+        <input type="number" step="any" name="sc" placeholder="Serum Creatinine (mg/dL)" required>
+        <input type="number" step="any" name="sod" placeholder="Sodium (mEq/L)" required>
+        <input type="number" step="any" name="pot" placeholder="Potassium (mEq/L)" required>
+        <input type="number" step="any" name="hemo" placeholder="Hemoglobin (g/dL)" required>
+        <input type="number" step="any" name="pcv" placeholder="Packed Cell Volume (%)" required>
+        <input type="number" step="any" name="wbcc" placeholder="White Blood Cell Count" required>
+        <input type="number" step="any" name="rbcc" placeholder="Red Blood Cell Count" required>
+        <input type="number" step="any" name="hypertension" placeholder="Hypertension (1 = Yes, 0 = No)" required>
+        <button type="submit">🔍 Predict</button>
+    </form>
+</div>
+</body>
+</html>
